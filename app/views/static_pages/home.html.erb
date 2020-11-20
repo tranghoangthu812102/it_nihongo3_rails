@@ -1,0 +1,16 @@
+<% if current_user %>
+    <p>こんにちは <%= current_user.mail %></p>
+    
+    <p> <%link_to "signout", destroy_user_session_path, method: :delete %></p>
+<% else %>
+    <div>
+        <p style= "margin-right: 5px"> <%= link_to "SignIn", new_user_session_path %></p>
+        <p> <%= link_to "Signup", user_session_path %> </p>
+    </div>
+<% end %>
+<hr/>
+<h1>HOME PAGE</h1>
+<% if current_user %>
+<p><%= link_to "Hon", books_path %></p>
+<% else %>
+<% end %>
