@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+   
+    
+  <% if current_user %>
+    <p>こんにちは <%= current_user.mail %></p>
+    
+    <p> <% link_to "log out", destroy_user_session_path, method: :delete %></p>
+<% else %>
+    <div>
+        <p style= "margin-right: 5px"> <%= link_to "サインイン", new_user_session_path %></p>
+        <p> <%= link_to "ユーザ登録", new_user_registration_path %> </p>
+    </div>
+<% end %>
+<hr/>
+
+<%= yield%>
+  
   </body>
 </html>
