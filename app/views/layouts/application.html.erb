@@ -13,9 +13,10 @@
    
     
   <% if current_user %>
-    <p>こんにちは <%= current_user.email %></p>
     
-    <p> <% link_to "log out", destroy_user_session_path, method: :delete %></p>
+    
+    <p> <% link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+     <%= link_to current_user.email  , users_show_path %></p>
 <% else %>
     <div>
         <p style= "margin-right: 5px"> <%= link_to "サインイン", new_user_session_path %></p>
