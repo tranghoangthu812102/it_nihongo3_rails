@@ -13,7 +13,7 @@
    
     
   <% if current_user %>
-    <p>こんにちは <%= current_user.mail %></p>
+    <p>こんにちは <%= current_user.email %></p>
     
     <p> <% link_to "log out", destroy_user_session_path, method: :delete %></p>
 <% else %>
